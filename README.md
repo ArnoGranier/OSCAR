@@ -64,6 +64,8 @@ END
 
 ### Output
 
+![alt text](https://user-images.githubusercontent.com/27825602/33574319-ee91264a-d938-11e7-8cfe-c5a9c340ac2b.gif)
+
 ## Wireworld
 
 ### Configuration file
@@ -110,6 +112,8 @@ END
 
 ### Output
 
+![alt text](https://user-images.githubusercontent.com/27825602/33574320-f008de1e-d938-11e7-94b0-da5cef0afc33.gif)
+
 ## Lifegame
 
 ### Configuration file
@@ -153,6 +157,8 @@ END
 ```
 
 ### Output
+
+![alt text](https://user-images.githubusercontent.com/27825602/33574323-f2692b8c-d938-11e7-9c05-65ca677d3cfa.gif)
 
 ## Phototropism
 
@@ -200,6 +206,8 @@ END
 
 ### Output
 
+![alt text](https://user-images.githubusercontent.com/27825602/33574321-f14b6b70-d938-11e7-9a52-3a26052ba1ae.gif)
+
 ## Segregation
 
 ### Configuration file
@@ -239,6 +247,8 @@ END
 ```
 
 ### Output
+
+![alt text](https://user-images.githubusercontent.com/27825602/33574326-f3d27c30-d938-11e7-926e-fa412b6853bc.gif)
 
 ## Sugarscape
 
@@ -287,6 +297,8 @@ END
 ```
 
 ### Output
+
+![alt text](https://user-images.githubusercontent.com/27825602/33574327-f51d64ce-d938-11e7-97d6-84025be562dc.gif)
 
 ## Reproduction
 
@@ -367,4 +379,6 @@ END
 ```
 
 ## Output
+
+![alt text](https://user-images.githubusercontent.com/27825602/33574330-f7d707d8-d938-11e7-8e7c-16d3f506a8e4.gif)
 
