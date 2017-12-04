@@ -25,7 +25,7 @@ to get help.
 
 ## Forestfire
 
-### Configuration file
+#### Configuration file
 ```
 % -----------------------------------------------------------------------------
 % ForestFire : simulates fire propagation
@@ -62,7 +62,7 @@ agent fire   (16,16)
 END
 ```
 
-### Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574319-ee91264a-d938-11e7-8cfe-c5a9c340ac2b.gif)
 
@@ -70,7 +70,7 @@ END
 
 ## Wireworld
 
-### Configuration file
+#### Configuration file
 
 ```
 % -----------------------------------------------------------------------------
@@ -112,7 +112,7 @@ agent conductor (1:8,5)
 END
 ```
 
-### Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574320-f008de1e-d938-11e7-94b0-da5cef0afc33.gif)
 
@@ -120,7 +120,7 @@ END
 
 ## Lifegame
 
-### Configuration file
+#### Configuration file
 ```
 % -----------------------------------------------------------------------------
 % LifeGame : Conway's Game of Life
@@ -160,7 +160,7 @@ nt live (8,8) (8,9) (7,10) (9,10) (8,11) (8,12)
 END
 ```
 
-### Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574323-f2692b8c-d938-11e7-9c05-65ca677d3cfa.gif)
 
@@ -168,7 +168,7 @@ END
 
 ## Phototropism
 
-### Configuration file
+#### Configuration file
 ```
 % -----------------------------------------------------------------------------
 % PhotoTropism : Growth of plants with photophilia or photophobia behaviors
@@ -210,7 +210,7 @@ agent photophobia (31,10) (31,15) (31,16) (31,21)
 END
 ```
 
-### Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574321-f14b6b70-d938-11e7-9a52-3a26052ba1ae.gif)
 
@@ -218,7 +218,7 @@ END
 
 ## Segregation
 
-### Configuration file
+#### Configuration file
 ```
 % -----------------------------------------------------------------------------
 % Segregation : Shelling's model of segregation
@@ -254,7 +254,7 @@ agent choice(empty,red,blue) (0:31,0:31)
 END
 ```
 
-### Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574326-f3d27c30-d938-11e7-926e-fa412b6853bc.gif)
 
@@ -262,7 +262,7 @@ END
 
 ## Sugarscape
 
-### Configuration file
+#### Configuration file
 ```
 % -----------------------------------------------------------------------------
 % Sugarscape : Simplified implementation of the Sugarscape system
@@ -306,7 +306,7 @@ agent sheep (8,14:18) (24,14:18)
 END
 ```
 
-### Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574327-f51d64ce-d938-11e7-97d6-84025be562dc.gif)
 
@@ -314,7 +314,7 @@ END
 
 ## Reproduction
 
-### Configuration file
+#### Configuration file
 
 ```
 % -----------------------------------------------------------------------------
@@ -390,7 +390,7 @@ agent sheep_f (10,5) (5,5) (1,1)
 END
 ```
 
-## Output
+#### Output
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574330-f7d707d8-d938-11e7-8e7c-16d3f506a8e4.gif)
 
