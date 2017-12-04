@@ -1,0 +1,37 @@
+% -----------------------------------------------------------------------------
+% WireWorld : Wireworld cellular automata
+%             https://en.wikipedia.org/wiki/Wireworld
+%
+% Description :
+% - WireWorld is based on 3-state mineral agents: 'conductor', 'head', 'tail'
+% - 'conductor' simulates path for moving electrons
+% - 'head' and 'tail' are the two adjacent parts of a moving electron
+% - 'head' generates an 'electric' field only captured by 'conductor'
+% -----------------------------------------------------------------------------
+
+world 16 16 #000
+
+mineral conductor #FF0
+var active                   % default: InitValue=0 TimeStepValue=0
+sensor active electric 1
+status active<1 conductor
+status 0<active<3 head       % 'conductor' -> 'head' only when 'active' == 1 or 2
+status active>2 conductor
+
+mineral tail #F00
+status conductor             % 'tail' -> 'conductor' without condition
+
+mineral head #00F
+var electric 2               % default: TimeStepValue=0
+field electric -1
+status tail                  % 'head' -> 'tail' without condition
+
+% set two electrons moving on a single horizontal wire (use slice notation)
+
+agent head (8,0) (8,8)
+agent conductor (8,1:7) (8,9:15)
+agent conductor (1:8,5)
+
+% -----------------------------------------------------------------------------
+
+END

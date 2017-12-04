@@ -1,0 +1,53 @@
+world 16 16 #FFF
+
+animal sheep_f #F00
+males sheep_m
+var age 30 -1
+status age<0 death
+var preg 
+var pheromone_f 5
+field pheromone_f -1
+sensor sexappeal pheromone_m 1
+status preg>0 pregnant_sheep
+
+animal sheep_mere #F00
+males sheep_m
+var age 15 -1
+status age<0 death
+var preg 
+var pheromone_f 5
+field pheromone_f -1
+sensor sexappeal pheromone_m 1
+status preg>0 pregnant_sheep
+
+animal sheep_m #00F
+females sheep_f,sheep_mere
+var pheromone_m 5
+field pheromone_m -1
+var age 30 -1
+status age<0 death
+sensor sexappeal pheromone_f 1
+sensor alreadypreg big -1
+
+animal pregnant_sheep #700
+var time 6 -1
+var big 5
+field big -1
+birth 0<time<2 babysheep choice(1,1,2)
+status time<1 choice(sheep_mere,sheep_mere,sheep_mere,death,death)
+
+animal babysheep #0F0
+var time 7 -1
+status time<1 ado
+sensor mom pheromone_f 1
+
+animal ado #070
+var time 5 -1
+status time<1 choice(sheep_m,sheep_f)
+sensor trodarkf pheromone_f -1
+sensor trodarkm pheromone_m -1
+
+agent sheep_m (5,10) (10,10) (15,15)
+agent sheep_f (10,5) (5,5) (1,1)
+
+END
