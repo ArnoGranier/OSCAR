@@ -116,7 +116,7 @@ END
 
 #### Output
 
-![alt text](https://user-images.githubusercontent.com/27825602/33574320-f008de1e-d938-11e7-94b0-da5cef0afc33.gif)
+![alt text](https://user-images.githubusercontent.com/27825602/33964286-2d662f70-e058-11e7-86f2-d0ab6c4cf682.gif)
 
 
 
@@ -181,7 +181,7 @@ agent live (11,40) (11,41) (12,40) (12,42) (13,40)
 
 #### Output
 
-![alt text](https://user-images.githubusercontent.com/27825602/33574323-f2692b8c-d938-11e7-9c05-65ca677d3cfa.gif)
+![alt text](https://user-images.githubusercontent.com/27825602/33964293-31004c1a-e058-11e7-9c90-740976b9e5a3.gif)
 
 
 ## Phototropism
@@ -230,7 +230,7 @@ END
 
 #### Output
 
-![alt text](https://user-images.githubusercontent.com/27825602/33574321-f14b6b70-d938-11e7-9a52-3a26052ba1ae.gif)
+![alt text](https://user-images.githubusercontent.com/27825602/33964290-2fe4830a-e058-11e7-84a4-ed6c5f6a5843.gif)
 
 
 
