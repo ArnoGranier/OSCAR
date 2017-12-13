@@ -8,6 +8,9 @@ class Cell:
         self.aff, self.fields_input, self.agent = None, {}, None
         # fields_input will have the form : {var_name : sum of value of fields produced by this variable on this cell}
 
+    def __repr__(self):
+    	return str(self.agent)
+
     def reset_fields_input(self):
         """Reset all fields inputs"""
         for name in self.fields_input: self.fields_input[name] = 0
@@ -44,7 +47,8 @@ class Cell:
         neighbours will have the form {0:self, 1:[all neighbours with 1-case distance], 
                                         2: [all neighbours with 2-cas distance], etc..}"""
         self.neighbours = {0: [self,]}
-        for a in range(1, max(self.model.nb_row,  self.model.nb_col)):
+        for a in range(1, min(self.model.max_field_range + 1, 
+        					  max(self.model.nb_row,  self.model.nb_col))):
             neighbours = []
             for _col in [b for b in range(-a, a+1) if 0<=self.col+b<self.model.nb_col]:
                 for _row in [b for b in [a, -a] if 0<=self.row+b<self.model.nb_row]:

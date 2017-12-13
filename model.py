@@ -8,9 +8,19 @@ class Model:
     def __init__(self, args):
         self.win = tk.Tk()
         self.win.title('OSCAR')
+        self.win.bind('<Escape>', lambda evt : self.stop())
+        self.win.bind('<space>', lambda evt : self.tick())
+        self.win.bind('a', lambda evt : self.auto())
         self.can = tk.Canvas(self.win, width=args.size, height=args.size)
         self.can.pack()
-        self.nb_tick, self.tickrate, self.delay = args.nb_tick, args.tickrate, args.delay
+        self.afters, self.count_already_done = [], 0
+        self.nb_tick, self.step_by_step = args.nb_tick, args.step_by_step
+        self.max_field_range = args.max_field_range
+        self.delay = args.delay if not self.step_by_step else 0
+        self.tickrate = int((1-max(min(args.tickrate, 0.9), 0.1)) * 400)
+        self.nb_row, self.nb_col = int(), int()
+        self.world_color = '#FFF'
+        self.dict_agents, self.dict_start, self.champs = dict(), dict(), list()
 
     def all_cells(self):
         """return all the cells"""
@@ -33,7 +43,7 @@ class Model:
         """One time step"""
         agents = self.all_agents()
 
-        # 1. Reset all old fields value
+        # 1. Reset all fields value
         for cell in self.all_cells(): cell.reset_fields_input()
 
         # 2. Propagate all fields
@@ -54,9 +64,7 @@ class Model:
         # 6. Increment all vars that need to be incremented
         for agent in agents: agent.var_time_step()
 
-
-
-
+        self.count_already_done += 1 # Increment the number of ticks done
 
     def start(self):
         """Main function"""
@@ -68,19 +76,30 @@ class Model:
 
         # Put agents in the world
         for ((x, y), dict_start) in self.dict_start.items():
-            self.world[x][y].agent = self.create_agent(dict_start)
+
+            try : self.world[x][y].agent = self.create_agent(dict_start)
+            except : print(x, y, self.create_agent(dict_start))
         self.win.update()
 
-        # Loop through time with a delay of delay, nb_tick times, 
-        # waiting tickrate between each step
-        self.afters = []
-        for i in range(self.delay, self.nb_tick + self.delay):
-            self.afters.append(self.win.after(i*self.tickrate, self.tick))
+        # If auto-mode : 
+        if not self.step_by_step:
+            self.auto()
             
         self.win.mainloop()
 
+
+    def auto(self):
+        """Auto mode"""
+        self.afters = [] # Reset the afters
+
+        # Loop through time with a delay of delay, nb_tick - already_done times, 
+        # waiting tickrate between each step
+        for i in range(self.delay, self.nb_tick + self.delay - self.count_already_done):
+            self.afters.append(self.win.after(i*self.tickrate, self.tick))
+
+        self.delay = 0 # After the first time we auto-mode, we don't want to delay anymore
+
     def stop(self):
         """Stop the loop"""
-        print('ab')
         for after in self.afters:
             self.win.after_cancel(after)

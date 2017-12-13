@@ -111,8 +111,8 @@ class Parser:
                 self.nb_row = int(line[1])
                 self.nb_col = int(line[2])
                 self.world_color = self.parse_color_image(line[3])[0]
-                for row in range(self.nb_col):
-                    for col in range(self.nb_row):
+                for row in range(self.nb_row):
+                    for col in range(self.nb_col):
                         self.dico_start[(row, col)] = None
                 line = self.treatement(file.readline())
             elif line[0] == 'agent':

@@ -10,6 +10,9 @@ class Mineral:
 		# To get along with "sensor's datas", all variables will be of the form {0 : value}
 		for var in self.vars: setattr(self, var.name, {0: var.initvalue})
 
+	def __str__(self):
+		return self.name
+
 	def var_time_step(self):
 		"""increment all variale (through time)"""
 		for var in self.vars: getattr(self, var.name)[0] += var.timestepvalue
@@ -32,7 +35,7 @@ class Vegetal(Mineral):
 	"""Class of a vegetal (inherit from Mineral)"""
 	def __init__(self, data):
 		Mineral.__init__(self, data)
-		# Compared to minerals, some other varaibles are useful for vegetals
+		# Compared to minerals, some other variables are useful for vegetals
 		for attr in ['births', 'males', 'females']: setattr(self, attr, data[attr])
 		if self.females : self.preg = {0: 0} #female must have the preg (for pregnant) variable
 
