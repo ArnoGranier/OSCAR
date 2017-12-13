@@ -84,7 +84,7 @@ END
 % - 'head' generates an 'electric' field only captured by 'conductor'
 % -----------------------------------------------------------------------------
 
-world 16 16 #000
+world 7 13 #000
 
 mineral conductor #FF0
 var active                   % default: InitValue=0 TimeStepValue=0
@@ -103,10 +103,12 @@ status tail                  % 'head' -> 'tail' without condition
 
 % set two electrons moving on a single horizontal wire (use slice notation)
 
-agent head (8,0) (8,8)
-agent conductor (8,1:7) (8,9:15)
-agent conductor (1:8,5)
-
+agent tail (1,1) (5,2) 
+agent head (1,2) (5,1)
+agent conductor (1,3:11)
+agent conductor (5,3) (5,4) (5,6:11)
+agent conductor (2,1) (4,1)
+agent conductor (2,5) (4,5) (3,4:6)
 % -----------------------------------------------------------------------------
 
 END
@@ -164,6 +166,22 @@ END
 
 ![alt text](https://user-images.githubusercontent.com/27825602/33574323-f2692b8c-d938-11e7-9c05-65ca677d3cfa.gif)
 
+```
+% initial configuration for the gosper gun
+agent dead all
+agent live (6,5) (6,6) (7,5) (7,6)
+agent live (6,14) (6,15) (7,13) (7,15) (8,13) (8,14)
+agent live (8,21) (8,22) (9,21) (9,23) (10,21)
+agent live (4,28) (4,29) (5,27) (5,29) (6,27) (6,28)
+agent live (4,39) (4,40) (5,39) (5,40)
+agent live (16,29) (16,30) (16,31) (17,29) (18,30)
+agent live (11,40) (11,41) (12,40) (12,42) (13,40)
+% -----------------------------------------------------------------------------
+```
+
+#### Output
+
+![alt text](https://user-images.githubusercontent.com/27825602/33574323-f2692b8c-d938-11e7-9c05-65ca677d3cfa.gif)
 
 
 ## Phototropism
@@ -195,7 +213,7 @@ var photo
 sensor photo light 1        % 'photo' stores 'light' field sensor (positive)
 
 vegetal photophobia #060
-var seed 2 -1               % photophobia germination requires 2 time steps
+var seed 3 -1               % photophobia germination requires 2 time steps
 birth seed<1 photophobia % germination when seed < 1
 status seed<1 photophobia % reset photophobia status to generate next seed
 var photo
