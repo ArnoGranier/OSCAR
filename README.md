@@ -6,8 +6,6 @@ Title of the simulator come from the french : "Outil de Simulation Comportementa
 The goal of this project is to allow anybody to make a simple multi-agent simulation based on the concept of attraction-repulsion. 
 Interactions between the user and the code, ie defining all the agents and their interactions, is done by txt configuration files. Format of this file will be describe later, but is intended to be as easy and "noob-friendly" as possible.
 
-# WORK IN PROGRESS, WILL WRITE SOME DOC LATER !
-
 # Examples
 
 To run your simulation with OSCAR, use the command prompt, go to where oscar's file are, and run :
